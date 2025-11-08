@@ -2,10 +2,10 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import os
 
-# Read benchmark results
+# load benchmark data
 df = pd.read_csv("benchmark_results.csv")
 
-# Create figure with 2 rows and 3 columns
+# set up a 2x3 plot layout
 fig, axes = plt.subplots(2, 3, figsize=(18, 10))
 fig.suptitle("Stock Market System - Benchmark Results", fontsize=16, fontweight="bold")
 
@@ -15,7 +15,7 @@ colors = ["#2E86AB", "#A23B72", "#F18F01"]
 for idx, func in enumerate(functions):
     func_data = df[df["Function"] == func]
 
-    # Time complexity graph (top row)
+   # time complexity
     ax_time = axes[0, idx]
     ax_time.plot(
         func_data["InputSize"],
@@ -31,7 +31,7 @@ for idx, func in enumerate(functions):
     ax_time.grid(True, alpha=0.3)
     ax_time.set_facecolor("#f8f9fa")
 
-    # Space complexity graph (bottom row)
+     # space complexity
     ax_space = axes[1, idx]
     ax_space.plot(
         func_data["InputSize"],
