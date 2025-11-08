@@ -145,11 +145,12 @@ The benchmarking system tests with **5 different input sizes**: 10, 50, 100, 500
 
 
 ### ✅ Test Case 2 — Best Buy/Sell Prediction
-**Input:**
-<!-- Add image or description here -->
+![bestbuy1](images/bestBuy1.png)
+![bestbuy2](images/bestBuy2.png)
+![bestbuy3](images/bestBuy3.png)
+![bestbuy4](images/bestBuy4.png)
+![bestbuy5](images/bestBuy5.png)
 
-**Output:**
-<!-- Add image or description here -->
 
 
 ### ✅ Test Case 3 — Portfolio Sorting
