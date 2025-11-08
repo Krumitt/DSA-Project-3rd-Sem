@@ -30,7 +30,7 @@ Be in the `stock-market-system` directory, then run the following commands in yo
 
 ```bash
 javac -d out -sourcepath src src/stockmarket/Main.java
-java -cp out stockmarket.Main
+java -Xms512m -Xmx512m -XX:+AlwaysPreTouch -cp out stockmarket.Main  
 ```
 ## Complexity Analysis
 
