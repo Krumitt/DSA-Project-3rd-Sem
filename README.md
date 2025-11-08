@@ -119,21 +119,27 @@ Microsoft,MSFT,20-10-2025,351.00,348.20
 
 ## Benchmark Results Interpretation
 
-The benchmarking system tests with **5 different input sizes**: 10, 50, 100, 500, 1000 stocks
+The benchmarking system tests with **5 different input sizes**: 200, 400, 600 ,800, 1000 stocks
 
 **Expected Results:**
 
 1. **Stock Search**: 
    - Time should be nearly constant (validates O(1))
    - Space grows linearly with input size
+   ![searchG](images/searchGraph.png)
+
 
 2. **Best Buy/Sell**: 
    - Time grows linearly (validates O(n))
    - Space remains constant
+   ![bestbuy](images/bestBuyGraph.png)
+
 
 3. **Stock Sort**: 
    - Time grows as n*log(n) (validates O(n log n))
    - Space grows logarithmically (recursion depth)
+   ![sortGraph](images/sortGraph.png)
+
 
 ## 🧪 Test Cases
 
@@ -146,43 +152,41 @@ The benchmarking system tests with **5 different input sizes**: 10, 50, 100, 500
 
 ### ✅ Test Case 2 — Best Buy/Sell Prediction
 ![bestbuy1](images/bestBuy1.png)
+moving few days forward
 ![bestbuy2](images/bestBuy2.png)
 ![bestbuy3](images/bestBuy3.png)
+checking history and best buy and sell dates for AAPL
 ![bestbuy4](images/bestBuy4.png)
 ![bestbuy5](images/bestBuy5.png)
 
 
 
-### ✅ Test Case 3 — Portfolio Sorting
-**Input:**
-<!-- Add image or description here -->
-
-**Output:**
-<!-- Add image or description here -->
-
-
-### ✅ Test Case 4 — Multiple Transactions
-**Input:**
-<!-- Add image or description here -->
-
-**Output:**
-<!-- Add image or description here -->
+### ✅ Test Case 3 — Portfolio After Buying Stock
+Initial Portfolio
+![portforlio1](images/port1.png)
+Buying NVDA stocks
+![portforlio2](images/port2.png)
+![portforlio3](images/port3.png)
+Portfolio after a few days
+![portforlio4](images/port4.png)
 
 
-### ✅ Test Case 5 — Large Dataset Handling
-**Input:**
-<!-- Add image or description here -->
 
-**Output:**
-<!-- Add image or description here -->
+### ✅ Test Case 4 — Display All Stocks
+![display](images/disp.png)
 
 
-### ❌ Test Case 6 — Invalid Stock Symbol (Failure Case)
-**Input:**
-<!-- Add image or description here -->
 
-**Output (Expected Failure):**
-<!-- Add image or description here -->
+### ✅ Test Case 5 — Sort Stocks
+![sort](images/sort1.png)
+
+
+
+### ❌ Test Case 6 — Cant Run Benchmark After Entering Trading
+
+![err1](images/goBackErr1.png)
+![err2](images/goBackErr2.png)
+![err3](images/goBackErr3.png)
 
 
 ## Dependencies
@@ -197,7 +201,7 @@ The benchmarking system tests with **5 different input sizes**: 10, 50, 100, 500
 ## Troubleshooting
 
 ### Issue: ClassNotFoundException
-**Solution**: Ensure you're running from the correct directory with `-cp bin`
+**Solution**: Ensure you're running from the correct directory
 
 ### Issue: market2.txt not found
 **Solution**: Place market2.txt in `data/` folder relative to where you run the program
