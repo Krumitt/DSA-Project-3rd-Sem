@@ -25,6 +25,13 @@ stock-market-system/
 │   └── market2.txt     # Initial stock data
 └── plot_benchmark.py   # Visualization script
 ```
+### 🚀 How to Run
+Be in the `stock-market-system` directory, then run the following commands in your terminal:
+
+```bash
+javac -d out -sourcepath src src/stockmarket/Main.java
+java -cp out stockmarket.Main
+```
 ## Complexity Analysis
 
 ### 1. Stock Search (Function 1)
@@ -128,7 +135,53 @@ The benchmarking system tests with **5 different input sizes**: 10, 50, 100, 500
    - Time grows as n*log(n) (validates O(n log n))
    - Space grows logarithmically (recursion depth)
 
-## Sample Output
+## 🧪 Test Cases
+
+### ✅ Test Case 1 — Basic Stock Search and Buy
+![buy1](images/stockBuy1.png)
+![buy2](images/stockBuy2.png)
+![buy3](images/stockBuy3.png)
+![buy4](images/stockBuy4.png)
+
+
+### ✅ Test Case 2 — Best Buy/Sell Prediction
+**Input:**
+<!-- Add image or description here -->
+
+**Output:**
+<!-- Add image or description here -->
+
+
+### ✅ Test Case 3 — Portfolio Sorting
+**Input:**
+<!-- Add image or description here -->
+
+**Output:**
+<!-- Add image or description here -->
+
+
+### ✅ Test Case 4 — Multiple Transactions
+**Input:**
+<!-- Add image or description here -->
+
+**Output:**
+<!-- Add image or description here -->
+
+
+### ✅ Test Case 5 — Large Dataset Handling
+**Input:**
+<!-- Add image or description here -->
+
+**Output:**
+<!-- Add image or description here -->
+
+
+### ❌ Test Case 6 — Invalid Stock Symbol (Failure Case)
+**Input:**
+<!-- Add image or description here -->
+
+**Output (Expected Failure):**
+<!-- Add image or description here -->
 
 
 ## Dependencies
