@@ -137,7 +137,7 @@ The benchmarking system tests with **5 different input sizes**: 200, 400, 600 ,8
 
 3. **Stock Sort**: 
    - Time grows as n*log(n) (validates O(n log n))
-   - Space grows logarithmically (recursion depth)
+   - Space stays constant
    ![sortGraph](images/sortGraph.png)
 
 
