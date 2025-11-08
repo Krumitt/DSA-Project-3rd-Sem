@@ -25,56 +25,6 @@ stock-market-system/
 │   └── market2.txt     # Initial stock data
 └── plot_benchmark.py   # Visualization script
 ```
-
-## Compilation & Execution
-
-### Step 1: Create Directory Structure
-```bash
-mkdir -p stock-market-system/src/stockmarket/{models,datastructures,algorithms,services,ui,benchmark}
-mkdir -p stock-market-system/{data,bin}
-cd stock-market-system
-```
-
-### Step 2: Place Your Files
-- Copy all Java files to their respective package directories
-- Place market2.txt in the data/ folder
-- Place plot_benchmark.py in the root directory
-
-### Step 3: Compile
-```bash
-# From project root
-javac -d bin src/stockmarket/models/*.java
-javac -d bin -cp bin src/stockmarket/datastructures/*.java
-javac -d bin -cp bin src/stockmarket/algorithms/*.java
-javac -d bin -cp bin src/stockmarket/services/*.java
-javac -d bin -cp bin src/stockmarket/ui/*.java
-javac -d bin -cp bin src/stockmarket/benchmark/*.java
-javac -d bin -cp bin src/stockmarket/Main.java
-```
-
-**OR compile everything at once:**
-```bash
-javac -d bin -sourcepath src src/stockmarket/Main.java
-```
-
-### Step 4: Run Trading System
-```bash
-java -cp bin stockmarket.Main
-# Select option 1
-```
-
-### Step 5: Run Benchmarks
-```bash
-java -cp bin stockmarket.Main
-# Select option 2
-```
-
-### Step 6: Visualize Results
-```bash
-pip install pandas matplotlib
-python plot_benchmark.py
-```
-
 ## Complexity Analysis
 
 ### 1. Stock Search (Function 1)
@@ -180,65 +130,6 @@ The benchmarking system tests with **5 different input sizes**: 10, 50, 100, 500
 
 ## Sample Output
 
-### Main Menu
-```
-================================================================================
-           STOCK MARKET ANALYSIS & TRADING SYSTEM
-================================================================================
-
-1. Start Trading System
-2. Run Benchmarks
-
-Enter choice: 1
-```
-
-### Trading Interface
-```
-================================================================================
-                               MAIN MENU
-================================================================================
-1. Buy Stock
-2. Sell Stock
-3. View Portfolio
-4. Display All Stocks
-5. Display Stocks Sorted by Price
-6. View Stock History & Best Buy/Sell Days
-7. Advance to Next Day
-8. Exit
-================================================================================
-```
-
-### Portfolio Display
-```
-================================================================================
-                              YOUR PORTFOLIO
-================================================================================
-
-Cash Balance: $91435.00
-
-Stock Holdings:
---------------------------------------------------------------------------------
-Ticker     Quantity     Avg Buy Price   Current Price   P&L            
---------------------------------------------------------------------------------
-AAPL       50           $171.30         $173.50         $110.00        
-NVDA       10           $453.40         $455.60         $22.00         
---------------------------------------------------------------------------------
-Total Profit/Loss: $132.00
-
-Total Net Worth: $100567.00
-================================================================================
-```
-
-### Best Buy/Sell Analysis
-```
-================================================================================
-                    BEST BUY/SELL OPPORTUNITY
-================================================================================
-Buy Date:  20-10-2025 (Day 0)
-Sell Date: 24-10-2025 (Day 4)
-Maximum Profit: $11.20 per share
-================================================================================
-```
 
 ## Dependencies
 
@@ -263,30 +154,6 @@ Maximum Profit: $11.20 per share
 ### Issue: Benchmark graphs not displaying
 **Solution**: Install required packages: `pip install matplotlib pandas`
 
-### Issue: Compilation errors
-**Solution**: Compile in order (models → datastructures → algorithms → services → ui → benchmark → Main)
-
-## Project Highlights
-
-### Technical Excellence
-- ✅ **Zero built-in collections** - All data structures custom-implemented
-- ✅ **Optimal algorithms** - Each function uses the most efficient approach
-- ✅ **Memory efficient** - Minimal space usage
-- ✅ **Real-world simulation** - Realistic stock price movements
-
-### Code Quality
-- Clean package structure
-- Comprehensive comments
-- Error handling
-- Input validation
-- Modular design
-
-### Educational Value
-- Demonstrates DSA concepts in practice
-- Shows algorithm complexity in real scenarios
-- Benchmarking proves theoretical analysis
-- Visual graphs for better understanding
-
 ## Future Enhancements
 
 Possible improvements:
@@ -296,19 +163,3 @@ Possible improvements:
 - Multi-threaded price simulation
 - Persistent storage (database integration)
 - Advanced charting (candlestick charts)
-
-## Author
-
-DSA Course Project - Stock Market Analysis System
-
-Created for educational purposes to demonstrate:
-- Data structure implementation
-- Algorithm design and analysis
-- Performance benchmarking
-- Software engineering principles
-
----
-
-**License**: Educational Use Only
-
-**Note**: This is a simulation system for learning purposes. Not intended for actual trading or investment decisions.
