@@ -155,7 +155,9 @@ The benchmarking system tests with **5 different input sizes**: 200, 400, 600 ,8
 moving few days forward
 ![bestbuy2](images/bestBuy2.png)
 ![bestbuy3](images/bestBuy3.png)
+
 checking history and best buy and sell dates for AAPL
+
 ![bestbuy4](images/bestBuy4.png)
 ![bestbuy5](images/bestBuy5.png)
 
