@@ -1,5 +1,5 @@
 package stockmarket.ui;
-
+//imports the custom data structures, models and services used in ui
 import stockmarket.models.Stock;
 import stockmarket.datastructures.CustomHashMap;
 import stockmarket.datastructures.CustomArrayList;
@@ -9,7 +9,8 @@ import stockmarket.services.StockService;
 import stockmarket.algorithms.StockSearch;
 import stockmarket.algorithms.BestBuySellFinder;
 import java.util.Scanner;
-
+//class MenuSystem handles all the user interactions for the system
+//operations like buying/selling stocks, analysing past stock history, portfolio viewing, etc.
 public class MenuSystem {
     private Scanner scanner;
     private PortfolioManager portfolioManager;
@@ -21,7 +22,7 @@ public class MenuSystem {
         DataManager.initializeData();
         this.currentStocks = DataManager.loadCurrentStocks();
     }
-
+//Starts the menu system for the user and runs till user chooses to exit.
     public void start() {
         System.out.println("\n" + "=".repeat(80));
         System.out.println("           WELCOME TO STOCK MARKET ANALYSIS & TRADING SYSTEM");
@@ -65,7 +66,7 @@ public class MenuSystem {
         }
         scanner.close();
     }
-
+    //Displays the menu options for the the stock analysis system
     private void displayMenu() {
         System.out.println("\n" + "=".repeat(80));
         System.out.println("                               MAIN MENU");
@@ -80,7 +81,7 @@ public class MenuSystem {
         System.out.println("8. Exit");
         System.out.println("=".repeat(80));
     }
-
+// for stock buying
     private void buyStockMenu() {
         System.out.print("\nEnter stock ticker symbol: ");
         String ticker = scanner.nextLine().toUpperCase().trim();
@@ -103,7 +104,7 @@ public class MenuSystem {
 
         portfolioManager.buyStock(stock, quantity);
     }
-
+//for stock selling
     private void sellStockMenu() {
         System.out.print("\nEnter stock ticker symbol: ");
         String ticker = scanner.nextLine().toUpperCase().trim();
@@ -126,15 +127,15 @@ public class MenuSystem {
 
         portfolioManager.sellStock(stock, quantity);
     }
-
+// for viewing current portfolio
     private void viewPortfolio() {
         portfolioManager.displayPortfolio(currentStocks);
     }
-
+// for displaying all current stocks in the system
     private void displayAllStocks() {
         StockService.displayAllStocks(currentStocks);
     }
-
+// for displaying stocks sorted by ascending or descending order of price
     private void displaySortedStocks() {
         System.out.println("\n1. Sort Low to High");
         System.out.println("2. Sort High to Low");
@@ -177,7 +178,7 @@ public class MenuSystem {
             System.out.println("\nNo profitable buy/sell opportunity found in history.");
         }
     }
-
+//for advancing to the next trading day, updates all stock prices and data
     private void advanceTime() {
         System.out.println("\nAdvancing to next trading day...");
         DataManager.advanceDay();
@@ -185,7 +186,7 @@ public class MenuSystem {
         System.out.println("\nPress Enter to continue...");
         scanner.nextLine();
     }
-
+//reading an integer input from user 
     private int getIntInput(String prompt) {
         while (true) {
             try {

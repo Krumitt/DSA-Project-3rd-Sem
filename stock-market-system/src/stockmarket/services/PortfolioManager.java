@@ -7,7 +7,7 @@ import stockmarket.datastructures.CustomArrayList;
 
 public class PortfolioManager {
     private Portfolio portfolio;
-
+//initializes a new portfolio manager with starting cash
     public PortfolioManager(double initialCash) {
         this.portfolio = new Portfolio(initialCash);
     }
@@ -20,7 +20,7 @@ public class PortfolioManager {
 
         double price = stock.getAvgPrice();
         boolean success = portfolio.buyStock(stock.getTicker(), quantity, price);
-
+//handles the process of buying the stocks of required quantity
         if (success) {
             System.out.printf("\nSuccessfully bought %d shares of %s at $%.2f per share\n",
                     quantity, stock.getTicker(), price);
@@ -32,7 +32,7 @@ public class PortfolioManager {
 
         return success;
     }
-
+//handles the selling process of stock and its quantity
     public boolean sellStock(Stock stock, int quantity) {
         if (stock == null) {
             System.out.println("Stock not found!");
@@ -53,14 +53,14 @@ public class PortfolioManager {
 
         return success;
     }
-
+// displays the current portfolio of user
     public void displayPortfolio(CustomHashMap<String, Stock> currentPrices) {
         System.out.println("\n" + "=".repeat(80));
         System.out.println("                              YOUR PORTFOLIO");
         System.out.println("=".repeat(80));
-
+// displays current cash balance of user
         System.out.printf("\nCash Balance: $%.2f\n\n", portfolio.getCashBalance());
-
+// retrieves the stock holdings and average buy prices from portfolio
         CustomHashMap<String, Integer> holdings = portfolio.getHoldings();
         CustomHashMap<String, Double> avgPrices = portfolio.getAvgBuyPrice();
 
@@ -75,7 +75,7 @@ public class PortfolioManager {
 
             CustomArrayList<String> tickers = holdings.keySet();
             double totalPL = 0;
-
+// loops through stocks to find profit, loss
             for (int i = 0; i < tickers.size(); i++) {
                 String ticker = tickers.get(i);
                 Integer qty = holdings.get(ticker);
@@ -95,7 +95,7 @@ public class PortfolioManager {
             System.out.println("-".repeat(80));
             System.out.printf("Total Profit/Loss: $%.2f\n", totalPL);
         }
-
+// calculate and displays the networth of the user
         double netWorth = portfolio.calculateNetWorth(currentPrices);
         System.out.printf("\nTotal Net Worth: $%.2f\n", netWorth);
         System.out.println("=".repeat(80));
