@@ -1,0 +1,16 @@
+Function,InputSize,TimeMs,MemoryKB
+StockSearch,10,0.7771,983
+BestBuySell,10,0.1276,122
+StockSort,10,0.1407,21
+StockSearch,50,0.8619,56
+BestBuySell,50,0.2543,9
+StockSort,50,0.1563,33
+StockSearch,100,0.6125,55
+BestBuySell,100,0.0781,6
+StockSort,100,0.1703,66
+StockSearch,500,0.2640,59
+BestBuySell,500,0.7879,5
+StockSort,500,0.7055,287
+StockSearch,1000,0.8584,53
+BestBuySell,1000,1.2339,5
+StockSort,1000,1.1785,531
